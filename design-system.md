@@ -32,12 +32,12 @@ Règles : le kaki ne surligne que **2–5 mots**, jamais un bloc entier. Sur fon
 texte marine ; sur fond bleu → texte blanc + accent kaki. Seul dégradé autorisé :
 `#16216C → #0E1A57` (couvertures).
 
-## 3. Typographie
-- **Titres = Tubqal Pro** (ExtraBold 800 / SemiBold 600), en **CAPITALES**, interligne court.
-- **Texte = Tango Sans** (Regular 400 / Bold 700), casse normale.
-- Labels (« PROPOSITION 3 : ») : Tubqal SemiBold, capitales, interlettrage large, en kaki dense.
-- Légendes de chiffres : Tango Sans **italique gras**.
-- Jamais plus de 2 polices. (Fichiers dans `fonts/`.)
+## 3. Typographie — Montserrat (police unique, SIL OFL, incluse)
+- **Titres** : Montserrat **ExtraBold (800)** / SemiBold (600), en **CAPITALES**, interligne court.
+- **Texte courant** : Montserrat **Regular (400)**, **Bold (700)** pour l'emphase, casse normale.
+- Labels (« PROPOSITION 3 : ») : Montserrat SemiBold, capitales, interlettrage large, en kaki.
+- Légendes de chiffres : Montserrat **italique**.
+- **Une seule famille** : la hiérarchie se fait par le **poids** et la **casse**. (`.ttf` dans `fonts/`.)
 
 ## 4. Hexagone (motif central)
 **Flat-top** uniquement (arête horizontale en haut/bas, comme le logo) —
@@ -58,20 +58,20 @@ Trois gabarits de référence (code dans `composants/`, rendus dans `exemples-vi
 Format par défaut **1080 × 1350** (4:5), marge de sécurité 84 px.
 
 ### A. Couverture / Manifeste — `couverture.html` → `exemples-visuels/couverture-genie.jpg`
-Fond **bleu** (dégradé `#16216C→#0E1A57`, ou photo voilée de bleu). Gros titre Tubqal
-capitales **blanc** avec **1 mot en kaki**. Filet kaki. Sous-titre Tango Sans. Logo blanc
+Fond **bleu** (dégradé `#16216C→#0E1A57`, ou photo voilée de bleu). Gros titre Montserrat
+capitales **blanc** avec **1 mot en kaki**. Filet kaki. Sous-titre Montserrat. Logo blanc
 centré en bas. Filigrane hexagone discret. → *la phrase d'ouverture qui claque.*
 
 ### B. Proposition / Mesure — `proposition.html` → `exemples-visuels/proposition-{1-fiscalite,2-epargne,3-experimentation}.jpg`
 Fond **crème**. En-tête : hexagone plein bleu + label kaki « PROPOSITION N : » + titre
-Tubqal bleu (1 ligne). Accroche kaki en capitales. **Liste de 2–4 mesures** : puce
-hexagone + texte Tango (mot-clé en kaki dense), filets kaki entre les items. **Bandeau
+Montserrat bleu (1 ligne). Accroche kaki en capitales. **Liste de 2–4 mesures** : puce
+hexagone + texte Montserrat (mot-clé en kaki dense), filets kaki entre les items. **Bandeau
 bleu** de conclusion en bas (barre kaki verticale + 1 phrase, mots-clés kaki). Logo
 couleur. → *une proposition = une carte.*
 
 ### C. Chiffres / Data — `stats.html` → `exemples-visuels/stats-etat-de-sante.jpg`
 Fond **crème**. Titre 2 niveaux (fin + gras). **Grille d'hexagones-contours kaki** (3×2),
-chacun = **gros chiffre** Tubqal bleu + **légende italique** dessous. (Variante violet
+chacun = **gros chiffre** Montserrat bleu + **légende italique** dessous. (Variante violet
 possible pour la santé/data.) → *les chiffres qui frappent.*
 
 ### D. Objectif / Liste verticale — `exemples-visuels/objectif-deserts-medicaux.jpg`

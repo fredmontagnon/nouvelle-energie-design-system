@@ -14,7 +14,7 @@
 
   "typography": {
     "display": {
-      "family": "Tubqal Pro",
+      "family": "Montserrat",
       "weights": [600, 800],
       "case": "CAPITALES",
       "letterSpacing": "-0.01em (titres), +0.16em (labels)",
@@ -22,13 +22,14 @@
       "usage": "Titres, gros chiffres, labels (« PROPOSITION 3 »), logo."
     },
     "text": {
-      "family": "Tango Sans",
+      "family": "Montserrat",
       "weights": [400, 700],
       "case": "normale",
       "lineHeight": "1.15–1.25",
       "usage": "Phrases, mesures, légendes. Gras = structure ; mots-clés = en kaki."
     },
-    "rule": "Jamais plus de 2 familles de polices sur un visuel."
+    "rule": "Police unique Montserrat (SIL OFL, incluse dans /fonts). Hiérarchie par le poids et la casse.",
+    "license": "SIL Open Font License — libre, fichiers .ttf + OFL.txt dans /fonts"
   },
 
   "shape": {

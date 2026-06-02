@@ -22,16 +22,16 @@ Détail pas-à-pas + exemples de prompts : **[00-LISEZ-MOI-claude-design.md](00-
 | `design-tokens.json` | Palette + typo + formats par plateforme (machine) |
 | `plateformes.md` | **Specs X / Instagram / LinkedIn / Facebook (2026) + zones de sécurité** |
 | `logo/` | Logo officiel (SVG/PNG/.ai) + déclinaisons |
-| `fonts/` | Tubqal Pro (titres) + Tango Sans (texte) |
+| `fonts/` | Montserrat (SIL OFL, incluse) |
 | `composants/` | Les 3 gabarits HTML/CSS de référence |
 | `exemples-visuels/` | 6 visuels originaux publiés = le style à reproduire |
 
 ## Palette (relevée sur les visuels publiés)
 Bleu marine `#16216C` · Indigo `#1D2582` · Kaki `#ADAB85` · Fond `#F8F8F8` · Blanc `#FFFFFF`.
-Polices : **Tubqal Pro** (titres, CAPITALES) + **Tango Sans** (texte). Signature : **hexagone flat-top**.
+Police : **Montserrat** (SIL OFL) — titres ExtraBold/SemiBold, texte Regular/Bold. Signature : **hexagone flat-top**.
 
 ## ⚠️ Notes
-- **Polices non incluses** : Tubqal Pro et Tango Sans sont sous licence ; elles ne sont pas
-  redistribuées dans ce dépôt public — référencées par leur nom (voir `fonts/POLICES.md`).
+- **Police Montserrat incluse** (SIL Open Font License — libre, redistribution autorisée).
+  Fichiers `.ttf` + `OFL.txt` dans `fonts/`.
 - Pour un rendu **pixel-exact reproductible** (HTML → PNG via `render.py`), voir le kit
   complémentaire `charte-ne/` (hors de ce dépôt).

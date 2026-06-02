@@ -14,7 +14,7 @@ exactement ce que contient ce dossier.
 design-system.md                ← le brief de marque (couleurs, typo, composants, ton)
 design-tokens.json              ← la palette + typo en format machine
 logo/                           ← logo officiel (svg, png, .ai) + déclinaisons
-fonts/                          ← Tubqal Pro (titres) + Tango Sans (texte)
+fonts/                          ← Montserrat (SIL OFL, incluse)
 composants/                     ← les 3 gabarits HTML/CSS de référence
 exemples-visuels/               ← 6 visuels originaux publiés (le style à reproduire)
 ```
@@ -28,7 +28,7 @@ exemples-visuels/               ← 6 visuels originaux publiés (le style à re
 3. **Vérifiez le système extrait.** S'il se trompe d'une couleur ou d'une police, corrigez
    avec les valeurs exactes de `design-tokens.json` :
    - Bleu marine `#16216C` · Indigo `#1D2582` · Kaki `#ADAB85` · Fond `#F8F8F8`
-   - Titres = **Tubqal Pro** · Texte = **Tango Sans**
+   - Police = **Montserrat** (titres ExtraBold/SemiBold, texte Regular/Bold)
 4. **Publiez** le système pour que tous les nouveaux projets en héritent.
 
 ## Créer un visuel
@@ -66,6 +66,6 @@ Menu Export : **Canva, PDF, PPTX, HTML**.
 - **Research preview** : pensé pour le 1er jet rapide plus que pour le pixel-exact. Pour une
   **série répétée à l'identique** (les « Propositions »), les **gabarits HTML** de
   `charte-ne/` restent plus fiables.
-- Vérifiez sur 1–2 essais que **logo, polices et bleu `#114F7F`** sont bien respectés avant
+- Vérifiez sur 1–2 essais que **logo, polices et bleu `#16216C`** sont bien respectés avant
   de produire en série.
 - Gardez `design-tokens.json` sous la main pour recorriger le système si besoin.

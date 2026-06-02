@@ -1,11 +1,11 @@
-# Polices — non incluses dans ce dépôt public (licence)
+# Polices — Montserrat (SIL Open Font License)
 
-Ce dépôt étant **public**, les fichiers de polices ne sont **pas redistribués** ici
-(Tubqal Pro et Tango Sans sont sous licence). Le système de design les référence par leur
-**nom** — ce qui suffit à Claude Design pour appliquer la typographie :
+La marque utilise **Montserrat** comme **police unique** (titres + texte) : une fonte
+**libre et gratuite** (SIL OFL), donc **incluse directement** dans ce dépôt (`.ttf` +
+`OFL.txt`).
 
-- **Tubqal Pro** — titres / display · poids SemiBold (600) et ExtraBold (800) · en CAPITALES.
-- **Tango Sans** — texte courant · Regular (400) et Bold (700).
+- **Titres / display** : Montserrat **ExtraBold (800)** et **SemiBold (600)**, en CAPITALES.
+- **Texte courant** : Montserrat **Regular (400)**, **Bold (700)** pour l'emphase, italique pour les légendes.
 
-> Pour un **rendu local exact** (kit `charte-ne/` avec `render.py`), déposez les fichiers
-> `.otf` / `.ttf` dans ce dossier — ils restent hors du dépôt public.
+La hiérarchie se fait par le **poids** et la **casse**, jamais par une 2ᵉ police.
+Disponible aussi sur Google Fonts (« Montserrat »).
