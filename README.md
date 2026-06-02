@@ -23,10 +23,12 @@ Détail pas-à-pas + exemples de prompts : **[00-LISEZ-MOI-claude-design.md](00-
 | `plateformes.md` | **Specs X / Instagram / LinkedIn / Facebook (2026) + zones de sécurité** |
 | `logo/` | Logo officiel (SVG/PNG/.ai) + déclinaisons |
 | `fonts/` | Montserrat (SIL OFL, incluse) |
-| `composants/` | Les 3 gabarits HTML/CSS de référence |
+| `composants/` | Gabarits HTML/CSS de référence (proposition, couverture, stats, citation) + **variantes carré 1:1 / story 9:16** |
 | `exemples-visuels/` | 6 visuels originaux publiés = le style à reproduire |
+| `apercus/` | Rendus des variantes de format (1:1, 9:16) |
+| `render.py` | Rendu HTML → PNG (dépôt **auto-renderable** : `python3 render.py composants/x.html out.png`) |
 
-## Palette (relevée sur les visuels publiés)
+## Palette (officielle — brand book 2025)
 Bleu Principal `#1D257A` · Bleu Sombre `#0F1752` · Chamois `#B0AD85` · Fond `#F9F9F9` · Secondaires `#52C985` / `#F62A72` / `#4A36A3`.
 Police : **Montserrat** (SIL OFL) — titres ExtraBold/SemiBold, texte Regular/Bold. Signature : **hexagone flat-top**.
 

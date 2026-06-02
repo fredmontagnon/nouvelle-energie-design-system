@@ -51,6 +51,15 @@ le format qui occupe le plus d'écran sur mobile et qui **performe le mieux dans
 > En story/reel, **réduire la quantité de texte** et **remonter le contenu** vers le centre.
 > Ne pas juste « étirer » un 4:5 en 9:16 : on **recompose** dans la zone sûre.
 
+## Gabarits PRÊTS par format (dans `composants/`)
+| Gabarit | 4:5 (défaut) | 1:1 carré | 9:16 story |
+|---|---|---|---|
+| Couverture | `couverture.html` | `couverture-1x1.html` | `couverture-9x16.html` |
+| Proposition | `proposition.html` | `proposition-1x1.html` | — *(layout dense → préférer 4:5/1:1)* |
+| Chiffres | `stats.html` | — | — |
+Aperçus rendus : `apercus/`. Les variantes ne font que **recomposer** (tailles, marges, zone
+sûre) — mêmes couleurs/polices. Rendre : `python3 render.py composants/<fichier>.html out.png`.
+
 ## Fichiers
 - **PNG** pour les visuels à **texte/aplats** (nos cartes) → texte net.
 - **JPG** pour les visuels à **photo** (couvertures avec image de fond) → poids maîtrisé.
