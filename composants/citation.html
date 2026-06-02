@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="ne-charte.css">
+<style>
+  /* ----- CITATION / VERBATIM à photo-en-hexagone ----- */
+  .quote{position:relative;height:100%;padding:78px var(--pad) 64px;display:flex;flex-direction:column;}
+
+  .quote__top{display:flex;justify-content:flex-end;}
+  .quote__top .ne-logo-img{width:188px;height:auto;}
+
+  /* Photo masquée dans un hexagone flat-top + hexagone d'accent derrière */
+  .quote__photo{position:relative;align-self:center;margin:6px 0 20px;width:560px;height:520px;}
+  .quote__photo .accent{position:absolute;inset:0;transform:translate(26px,26px);
+     background:var(--ne-indigo);clip-path:polygon(25% 0%,75% 0%,100% 50%,75% 100%,25% 100%,0% 50%);opacity:.9;}
+  .quote__photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%;
+     clip-path:polygon(25% 0%,75% 0%,100% 50%,75% 100%,25% 100%,0% 50%);}
+
+  /* Bloc citation */
+  .quote__body{flex:1;display:flex;flex-direction:column;justify-content:center;position:relative;}
+  .quote__mark{font-family:var(--font-display);font-weight:800;color:var(--ne-navy);
+     font-size:150px;line-height:.6;height:64px;}
+  .quote__text{font-family:var(--font-display);font-weight:800;color:var(--ne-navy);
+     font-size:64px;line-height:1.08;letter-spacing:-.01em;margin:6px 0 24px;}
+  .quote__author{font-family:var(--font-text);font-style:italic;font-weight:700;color:var(--ne-kaki-ink);font-size:34px;}
+  .quote__author small{display:block;font-style:normal;font-weight:400;color:var(--ne-navy);font-size:26px;opacity:.7;margin-top:2px;}
+</style>
+</head>
+<body>
+<div class="ne-canvas">
+ <div class="quote">
+
+  <div class="quote__top">
+    <img class="ne-logo-img" src="../logo/logo-officiel.svg" alt="Nouvelle Énergie">
+  </div>
+
+  <div class="quote__photo">
+    <div class="accent"></div>
+    <img src="../photos/dl-XX.jpg" alt="David Lisnard">
+  </div>
+
+  <div class="quote__body">
+    <div class="quote__mark">“</div>
+    <div class="quote__text" data-fit-block>Les maires sont des praticiens du quotidien.</div>
+    <div class="quote__author">— David Lisnard<small>Président de Nouvelle Énergie</small></div>
+  </div>
+
+ </div>
+</div>
+<script>
+  /* Réduit le corps de la citation si elle est trop longue pour le bloc. */
+  document.fonts.ready.then(()=>{
+    const el=document.querySelector('[data-fit-block]'); if(!el) return;
+    const max=el.parentElement.clientHeight*0.62;
+    let s=parseFloat(getComputedStyle(el).fontSize);
+    while(el.scrollHeight>max && s>30){ s-=2; el.style.fontSize=s+'px'; }
+  });
+</script>
+</body>
+</html>
