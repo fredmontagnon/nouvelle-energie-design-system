@@ -15,14 +15,19 @@
 
 /* ---------- DESIGN TOKENS ------------------------------------------- */
 :root{
-  /* Couleurs de marque — palette des VISUELS PUBLIÉS (relevée sur les cartes originales) */
-  --ne-navy:   #16216C;  /* Bleu marine — fonds, bandeaux, texte courant, titres, logo */
-  --ne-indigo: #1D2582;  /* Indigo — hexagones (puces, icônes), chiffres (un peu plus vif) */
-  --ne-kaki:   #ADAB85;  /* Kaki/or — mots-clés surlignés, labels, filets, contours d'hexagones */
-  --ne-kaki-ink:#ADAB85; /* identique (la marque accepte un kaki doux sur fond clair) */
-  --ne-cream:  #F8F8F8;  /* Blanc cassé — fond des cartes claires (jamais blanc pur) */
-  --ne-white:  #FFFFFF;
-  --ne-violet: #4B3F9E;  /* Variante "données / santé" (optionnel) */
+  /* Couleurs de marque — palette OFFICIELLE (brand book Identité visuelle 2025) */
+  --ne-navy:    #1D257A;  /* Bleu Principal — fonds, bandeaux, titres, texte, logo */
+  --ne-indigo:  #1D257A;  /* Hexagones (puces, icônes) = Bleu Principal */
+  --ne-blue-dark:#0F1752; /* Bleu Sombre — fonds profonds, fin de dégradé */
+  --ne-kaki:    #B0AD85;  /* Chamois Désaturé — accent doux, contours, sur fond bleu */
+  --ne-kaki-ink:#98955F;  /* Chamois Sombre — mots-clés/labels sur fond CLAIR (lisible) */
+  --ne-cream:   #F9F9F9;  /* Blanc (off-white) — fond des cartes claires */
+  --ne-gainsboro:#DCDFDF; /* Gris clair neutre */
+  --ne-white:   #FFFFFF;
+  /* Secondaires — 5 à 15% max (boutons, lueurs, traits, accents) */
+  --ne-emerald: #52C985;  /* Vert Émeraude */
+  --ne-pink:    #F62A72;  /* Rose Électrique */
+  --ne-violet:  #4A36A3;  /* Indigo Bleu */
 
   /* Rôles typographiques */
   --font-display:'Montserrat', system-ui, sans-serif;  /* TITRES (ExtraBold 800 / SemiBold 600) */

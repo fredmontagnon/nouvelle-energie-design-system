@@ -3,13 +3,20 @@
   "$description": "Design tokens officiels — palette relevée sur les VISUELS PUBLIÉS. À ingérer par Claude Design comme système de design de référence.",
 
   "color": {
-    "blue":   { "value": "#16216C", "name": "Bleu marine Nouvelle Énergie", "usage": "Primaire : fonds pleins, bandeaux, titres, texte courant sur fond clair, logo." },
-    "indigo": { "value": "#1D2582", "name": "Indigo", "usage": "Hexagones (puces, icônes) et gros chiffres — un peu plus vif que le marine." },
-    "kaki":   { "value": "#ADAB85", "name": "Kaki / or", "usage": "Accent : mots-clés surlignés (2-5 mots), labels (« PROPOSITION N »), filets, contours d'hexagones. Volontairement doux sur fond clair." },
-    "cream":  { "value": "#F8F8F8", "name": "Blanc cassé", "usage": "Fond des cartes claires. Jamais de blanc pur en fond." },
-    "white":  { "value": "#FFFFFF", "name": "Blanc", "usage": "Texte et logo sur fond bleu / photo." },
-    "violet": { "value": "#4B3F9E", "name": "Violet data", "usage": "Optionnel — visuels 'chiffres / données / santé'." },
-    "green":  { "value": "#33945F", "name": "Vert objectif", "usage": "Optionnel — accent des feuilles de route « Objectif » (variante thématique, ex. santé)." }
+    "_doc": "Palette OFFICIELLE (brand book Identité visuelle 2025). Primaires = base ; secondaires = 5 à 15% MAX du visuel (boutons, lueurs, traits, mentions, accents).",
+    "_primaires": {
+      "blue":        { "value": "#1D257A", "name": "Bleu Principal", "pantone": "2735 C", "usage": "Primaire (symbole de la France) : fonds, bandeaux, titres, texte sur fond clair, hexagones, logo." },
+      "blueDark":    { "value": "#0F1752", "name": "Bleu Sombre", "pantone": "2766 C", "usage": "Variante foncée : fonds profonds, fin de dégradé, contraste." },
+      "chamois":     { "value": "#B0AD85", "name": "Chamois Désaturé", "pantone": "452 C", "usage": "Accent doux : mots-clés, labels, filets, contours d'hexagones ; grands titres sur fond bleu." },
+      "chamoisDark": { "value": "#98955F", "name": "Chamois Sombre", "pantone": "451 C", "usage": "Chamois foncé : mots-clés/labels sur fond CLAIR (lisibilité), contraste." },
+      "white":       { "value": "#F9F9F9", "name": "Blanc", "usage": "Fond clair (off-white, jamais blanc 100%). Texte/logo sur fond bleu = #FFFFFF." },
+      "gainsboro":   { "value": "#DCDFDF", "name": "Gainsboro", "pantone": "7541 C", "usage": "Gris clair neutre : aplats, séparations, fonds alternatifs." }
+    },
+    "_secondaires_5a15pct": {
+      "emerald": { "value": "#52C985", "name": "Vert Émeraude", "usage": "Boutons (ex. 'adhérer'), lueurs, hexagones accent, data. + teinte claire dispo." },
+      "pink":    { "value": "#F62A72", "name": "Rose Électrique", "usage": "Boutons (ex. 'suivre'), lignes/dégradés, hexagones accent. + teinte claire dispo." },
+      "indigo":  { "value": "#4A36A3", "name": "Indigo Bleu", "usage": "Patterns hexagonaux, lueurs, hexagones accent. + teinte claire dispo." }
+    }
   },
 
   "typography": {
@@ -29,7 +36,30 @@
       "usage": "Phrases, mesures, légendes. Gras = structure ; mots-clés = en kaki."
     },
     "rule": "Police unique Montserrat (SIL OFL, incluse dans /fonts). Hiérarchie par le poids et la casse.",
+    "officialWeights": "Brand book : 5 graisses retenues — Light 300, Regular 400, SemiBold 600, Bold 700, ExtraBold 800.",
     "license": "SIL Open Font License — libre, fichiers .ttf + OFL.txt dans /fonts"
+  },
+
+  "gradients": {
+    "_doc": "8 dégradés officiels. Subtils en arrière-plan, ou en accent sur des formes géométriques (hexagones, lignes).",
+    "bleu":        "#1D257A → #0F1752 (primaire, couvertures/fonds)",
+    "chamois":     "#B0AD85 → #98955F (primaire clair)",
+    "bleu_rose":   "#1D257A → #F62A72",
+    "rose_chamois":"#F62A72 → #B0AD85",
+    "bleu_indigo": "#1D257A → #4A36A3",
+    "bleu_chamois":"#1D257A → #B0AD85",
+    "bleu_emeraude":"#1D257A → #52C985",
+    "emeraude_chamois":"#52C985 → #B0AD85"
+  },
+
+  "devices": {
+    "_doc": "Dispositifs graphiques récurrents du brand book.",
+    "hexagone_declinaisons": "lignes (contours concentriques), surface pleine, points (trame demi-teinte), rayures (hachures). Coins LÉGÈREMENT ARRONDIS. Flat-top.",
+    "patterns": "Fonds = motifs hexagonaux (lignes/points) en chamois ou indigo sur bleu, ou trame de points sur clair. Surtout digital/web.",
+    "photo_hexagone": "Les photos sont masquées dans un HEXAGONE à coins arrondis (portraits, foules). Petits hexagones pleins (dégradé rose/émeraude/indigo) éparpillés autour.",
+    "lueur_demiteinte": "Trame de points en dégradé (rose/indigo) formant une lueur hexagonale derrière un mot fort.",
+    "boutons": "Coins arrondis. Plein (couleur secondaire : émeraude 'adhérer', rose 'suivre') OU contour (bleu/rose). Libellés courts : adhérer, faire un don, suivre, s'inscrire.",
+    "citation": "Grands guillemets bleus (« ») + citation en bleu gras + attribution en italique ; photo en hexagone à côté."
   },
 
   "shape": {
