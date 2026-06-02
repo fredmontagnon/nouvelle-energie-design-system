@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="ne-charte.css">
+<style>
+  /* ----- COUVERTURE / HERO (fond marine, gros titre) ----- */
+  .cover{position:relative;height:100%;display:flex;flex-direction:column;
+         justify-content:flex-end;padding:96px 84px 70px;color:var(--ne-white);}
+
+  /* Fond : dégradé marine -> indigo + voile photo optionnel.
+     Pour utiliser une photo : décommenter background-image ci-dessous. */
+  .cover__bg{position:absolute;inset:0;z-index:0;
+    background:
+      linear-gradient(150deg, #16216C 0%, #0E1A57 100%);
+      /* Pour une photo de fond : remplacer par
+         linear-gradient(150deg, rgba(22,33,108,.86), rgba(14,26,87,.92)), url('../assets/ma-photo.jpg') center/cover; */
+  }
+  /* Filigrane hexagone discret en bas-droite */
+  .cover__hex{position:absolute;right:-180px;bottom:-160px;width:760px;height:658px;z-index:1;opacity:.10;}
+  .cover__hex svg{width:100%;height:100%}
+
+  .cover__content{position:relative;z-index:2;}
+  .cover__title{font-family:var(--font-display);font-weight:800;text-transform:uppercase;
+                font-size:118px;line-height:.92;letter-spacing:-.01em;}
+  .cover__title .k{color:var(--ne-kaki);}
+  .cover__rule{width:430px;height:3px;background:var(--ne-kaki);border:0;margin:46px 0 34px;}
+  .cover__sub{font-family:var(--font-text);font-weight:400;font-size:48px;line-height:1.22;max-width:760px;}
+  .cover__sub .k{color:var(--ne-kaki);font-weight:700;}
+
+  .cover__logo{position:relative;z-index:2;display:flex;justify-content:center;margin-top:54px;}
+  .cover__logo img{width:360px;height:auto;display:block;}
+</style>
+</head>
+<body>
+<div class="ne-canvas ne-canvas--navy">
+  <div class="cover">
+    <div class="cover__bg"></div>
+    <div class="cover__hex">
+      <svg viewBox="0 0 118 100" fill="none"><path d="M31 5 L87 5 L113 50 L87 95 L31 95 L5 50 Z" stroke="#fff" stroke-width="2"/></svg>
+    </div>
+
+    <div class="cover__content">
+      <h1 class="cover__title">La France<br>a le <span class="k">génie.</span><br>Il lui manque<br>la liberté<br>de l'exercer.</h1>
+      <hr class="cover__rule">
+      <p class="cover__sub">3 propositions pour <span class="k">libérer l'innovation</span> française.</p>
+    </div>
+
+    <div class="cover__logo">
+      <img src="../logo/logo-blanc.svg" alt="Nouvelle Énergie pour la France">
+    </div>
+  </div>
+</div>
+</body>
+</html>

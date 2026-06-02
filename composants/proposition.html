@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="ne-charte.css">
+<style>
+  /* ----- Mise en page spécifique : carte PROPOSITION ----- */
+  .prop{display:flex;flex-direction:column;height:100%;padding:var(--pad) var(--pad) 0;}
+
+  /* En-tête : hexagone + label + titre */
+  .prop__head{display:flex;align-items:flex-start;gap:34px;margin-top:8px;}
+  .prop__head .hex{--hex-size:108px;margin-top:6px;}
+  .prop__label{font-family:var(--font-display);font-weight:600;letter-spacing:.16em;
+               text-transform:uppercase;color:var(--ne-kaki-ink);font-size:31px;margin-bottom:2px;}
+  .prop__title{font-family:var(--font-display);font-weight:800;color:var(--ne-navy);
+               font-size:84px;line-height:.95;letter-spacing:-.01em;white-space:nowrap;}
+
+  /* Accroche kaki */
+  .prop__lead{font-family:var(--font-display);font-weight:800;text-transform:uppercase;
+              color:var(--ne-kaki-ink);font-size:40px;line-height:1.12;margin:40px 0 8px;}
+
+  /* Liste de mesures */
+  .prop__list{display:flex;flex-direction:column;justify-content:center;flex:1;gap:30px;padding:14px 0;}
+  .item{display:flex;align-items:flex-start;gap:30px;}
+  .item .hex{--hex-size:60px;margin-top:6px;}
+  .item p{font-family:var(--font-text);font-weight:700;color:var(--ne-navy);
+          font-size:43px;line-height:1.16;}
+  .sep{margin-left:90px;max-width:560px;}
+
+  /* Bandeau + logo */
+  .prop__foot{margin:0 calc(-1 * var(--pad));}
+  .prop__logo{display:flex;justify-content:center;padding:14px 0 16px;}
+  .prop__logo img{width:312px;height:auto;display:block;}
+</style>
+</head>
+<body>
+<div class="ne-canvas">
+ <div class="prop">
+
+  <div class="prop__head">
+    <div class="hex"></div>
+    <div>
+      <div class="prop__label">Proposition 3 :</div>
+      <div class="prop__title" data-fit>EXPÉRIMENTATION</div>
+    </div>
+  </div>
+
+  <div class="prop__lead">Remplaçons la France de la précaution par la France de l'expérimentation.</div>
+
+  <div class="prop__list">
+    <div class="item">
+      <div class="hex"></div>
+      <p>Le principe de précaution supprimé de la Constitution, remplacé par un principe de <span class="k">responsabilité</span></p>
+    </div>
+    <hr class="rule-kaki sep">
+    <div class="item">
+      <div class="hex"></div>
+      <p>France Expérimentation transformée en <span class="k">droit opposable</span></p>
+    </div>
+    <hr class="rule-kaki sep">
+    <div class="item">
+      <div class="hex"></div>
+      <p>La commande publique ouverte à nos <span class="k">entreprises de rupture</span></p>
+    </div>
+  </div>
+
+  <div class="prop__foot">
+    <div class="endband">L'État doit être le <span class="k">premier client<br>de l'innovation française.</span></div>
+    <div class="prop__logo">
+      <img src="../logo/logo-couleur.svg" alt="Nouvelle Énergie pour la France">
+    </div>
+  </div>
+
+ </div>
+</div>
+<script>
+  /* Ajuste le titre pour qu'il tienne sur une seule ligne, quel que soit le mot. */
+  document.fonts.ready.then(() => {
+    document.querySelectorAll('[data-fit]').forEach(el => {
+      const max = el.parentElement.clientWidth;
+      let size = parseFloat(getComputedStyle(el).fontSize);
+      while (el.scrollWidth > max && size > 30){ size -= 1; el.style.fontSize = size + 'px'; }
+    });
+  });
+</script>
+</body>
+</html>

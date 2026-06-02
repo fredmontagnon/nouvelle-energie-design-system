@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="ne-charte.css">
+<style>
+  /* ----- STATS : grille de chiffres en hexagones ----- */
+  /* Couleur d'accent : --acc. Par défaut bleu marine (marque).
+     Variante "données/santé" : mettre --acc:var(--ne-violet) sur .ne-canvas. */
+  .stats{height:100%;padding:90px 76px 70px;display:flex;flex-direction:column;}
+  .stats__title{font-family:var(--font-display);font-size:62px;line-height:1.04;margin-bottom:8px;}
+  .stats__title .l1{font-weight:400;color:var(--acc,var(--ne-navy));opacity:.85;}
+  .stats__title .l2{font-weight:800;color:var(--acc,var(--ne-navy));}
+
+  .grid{flex:1;display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(2,1fr);
+        gap:18px 12px;align-items:center;margin-top:18px;}
+  .cell{display:flex;flex-direction:column;align-items:center;text-align:center;}
+  .cell__hex{position:relative;width:300px;height:260px;display:flex;align-items:center;justify-content:center;}
+  .cell__hex svg{position:absolute;inset:0;width:100%;height:100%;}
+  .cell__num{position:relative;font-family:var(--font-display);font-weight:800;
+             color:var(--acc,var(--ne-navy));font-size:96px;line-height:1;}
+  .cell__num sup{font-size:.45em;vertical-align:super;font-weight:700;}
+  .cell__cap{font-family:var(--font-text);font-style:italic;font-weight:700;
+             color:var(--acc,var(--ne-navy));font-size:26px;line-height:1.18;max-width:300px;margin-top:6px;}
+</style>
+</head>
+<body>
+<div class="ne-canvas">
+  <div class="stats">
+    <div class="stats__title">
+      <div class="l1">État de Santé :</div>
+      <div class="l2">les 6 chiffres qui révèlent<br>l'ampleur de la crise.</div>
+    </div>
+
+    <div class="grid">
+      <!-- 6 cellules : nombre + légende -->
+      <div class="cell"><div class="cell__hex"><svg viewBox="0 0 118 100" fill="none"><path d="M31 4 L87 4 L114 50 L87 96 L31 96 L4 50 Z" stroke="var(--ne-kaki)" stroke-width="2.4"/></svg><div class="cell__num">83<sup>%</sup></div></div><div class="cell__cap">des Français confrontés à des obstacles d'accès aux soins.</div></div>
+      <div class="cell"><div class="cell__hex"><svg viewBox="0 0 118 100" fill="none"><path d="M31 4 L87 4 L114 50 L87 96 L31 96 L4 50 Z" stroke="var(--ne-kaki)" stroke-width="2.4"/></svg><div class="cell__num">30<sup>%</sup></div></div><div class="cell__cap">de la population vit dans un désert médical</div></div>
+      <div class="cell"><div class="cell__hex"><svg viewBox="0 0 118 100" fill="none"><path d="M31 4 L87 4 L114 50 L87 96 L31 96 L4 50 Z" stroke="var(--ne-kaki)" stroke-width="2.4"/></svg><div class="cell__num">17,9<sup>%</sup></div></div><div class="cell__cap">des adultes sont obèses</div></div>
+      <div class="cell"><div class="cell__hex"><svg viewBox="0 0 118 100" fill="none"><path d="M31 4 L87 4 L114 50 L87 96 L31 96 L4 50 Z" stroke="var(--ne-kaki)" stroke-width="2.4"/></svg><div class="cell__num">1/5</div></div><div class="cell__cap">1 Français sur 5 touché par un trouble psychique chaque année</div></div>
+      <div class="cell"><div class="cell__hex"><svg viewBox="0 0 118 100" fill="none"><path d="M31 4 L87 4 L114 50 L87 96 L31 96 L4 50 Z" stroke="var(--ne-kaki)" stroke-width="2.4"/></svg><div class="cell__num">67<sup>%</sup></div></div><div class="cell__cap">des Français ont déjà renoncé ou reporté des soins</div></div>
+      <div class="cell"><div class="cell__hex"><svg viewBox="0 0 118 100" fill="none"><path d="M31 4 L87 4 L114 50 L87 96 L31 96 L4 50 Z" stroke="var(--ne-kaki)" stroke-width="2.4"/></svg><div class="cell__num">27<sup>%</sup></div></div><div class="cell__cap">des Français ont été confrontés à des pénuries de médicaments</div></div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

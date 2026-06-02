@@ -1,0 +1,78 @@
+{
+  "$brand": "Nouvelle Énergie pour la France",
+  "$description": "Design tokens officiels — palette relevée sur les VISUELS PUBLIÉS. À ingérer par Claude Design comme système de design de référence.",
+
+  "color": {
+    "blue":   { "value": "#16216C", "name": "Bleu marine Nouvelle Énergie", "usage": "Primaire : fonds pleins, bandeaux, titres, texte courant sur fond clair, logo." },
+    "indigo": { "value": "#1D2582", "name": "Indigo", "usage": "Hexagones (puces, icônes) et gros chiffres — un peu plus vif que le marine." },
+    "kaki":   { "value": "#ADAB85", "name": "Kaki / or", "usage": "Accent : mots-clés surlignés (2-5 mots), labels (« PROPOSITION N »), filets, contours d'hexagones. Volontairement doux sur fond clair." },
+    "cream":  { "value": "#F8F8F8", "name": "Blanc cassé", "usage": "Fond des cartes claires. Jamais de blanc pur en fond." },
+    "white":  { "value": "#FFFFFF", "name": "Blanc", "usage": "Texte et logo sur fond bleu / photo." },
+    "violet": { "value": "#4B3F9E", "name": "Violet data", "usage": "Optionnel — visuels 'chiffres / données / santé'." },
+    "green":  { "value": "#33945F", "name": "Vert objectif", "usage": "Optionnel — accent des feuilles de route « Objectif » (variante thématique, ex. santé)." }
+  },
+
+  "typography": {
+    "display": {
+      "family": "Tubqal Pro",
+      "weights": [600, 800],
+      "case": "CAPITALES",
+      "letterSpacing": "-0.01em (titres), +0.16em (labels)",
+      "lineHeight": "0.92–0.96",
+      "usage": "Titres, gros chiffres, labels (« PROPOSITION 3 »), logo."
+    },
+    "text": {
+      "family": "Tango Sans",
+      "weights": [400, 700],
+      "case": "normale",
+      "lineHeight": "1.15–1.25",
+      "usage": "Phrases, mesures, légendes. Gras = structure ; mots-clés = en kaki."
+    },
+    "rule": "Jamais plus de 2 familles de polices sur un visuel."
+  },
+
+  "shape": {
+    "hexagon": {
+      "orientation": "flat-top (arête horizontale en haut et en bas). JAMAIS pointe en haut.",
+      "clipPath": "polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)",
+      "ratio": "largeur:hauteur ≈ 1 : 0.87",
+      "usage": "Signature de la marque : puces de liste, icônes/numéros, cadres de chiffres (contour), filigranes, logo."
+    }
+  },
+
+  "format": {
+    "default":     { "name": "Portrait social 4:5", "px": "1080 x 1350", "export": "x2", "safeMargin": "84px" },
+    "square":      { "name": "Carré 1:1", "px": "1080 x 1080" },
+    "story":       { "name": "Story / Reel 9:16", "px": "1080 x 1920", "safeArea": "contenu dans 1080 x 1610 (~250px libres haut ET bas)" },
+    "landscape":   { "name": "Paysage 16:9", "px": "1600 x 900" },
+    "linkPreview": { "name": "Aperçu de lien", "px": "1200 x 627" }
+  },
+
+  "platforms": {
+    "$regle": "TOUJOURS demander la/les plateforme(s) et l'emplacement AVANT de produire un visuel (voir plateformes.md). Sortir un fichier par plateforme, au bon format.",
+    "instagram": { "feed": "1080x1350 (4:5)", "carre": "1080x1080", "story_reel": "1080x1920 (9:16, zone sûre 1080x1610)" },
+    "facebook":  { "feed": "1080x1350 (4:5) ou 1080x1080", "story": "1080x1920 (9:16)" },
+    "linkedin":  { "feed": "1080x1350 (4:5) ou 1200x1200 (1:1)", "apercu_lien": "1200x627" },
+    "x":         { "feed": "1600x900 (16:9) ou 1080x1080 (1:1)", "note": "le 4:5 est rogné dans le fil ; limiter le texte dans l'image" },
+    "fichier":   { "texte_graphique": "PNG", "photo": "JPG", "min_largeur": "1080px" }
+  },
+
+  "voice": {
+    "principes": [
+      "Une idée par visuel.",
+      "Phrases courtes, affirmatives, au présent. Verbes d'action.",
+      "UN mot-clé porteur de sens surligné en kaki par phrase.",
+      "Capitales pour titres et accroches ; casse normale pour le corps.",
+      "Chiffres mis en scène (gros, dans un hexagone)."
+    ]
+  },
+
+  "logo": {
+    "fichiers": {
+      "couleur": "logo/logo-couleur.svg — bleu + kaki, sur fond clair",
+      "blanc": "logo/logo-blanc.svg — tout blanc, sur fond bleu / photo",
+      "blanc-bleu": "logo/logo-blanc-bleu.png — ÉNERGIE blanc + reste kaki, sur fond bleu moyen"
+    },
+    "regles": "Toujours centré en bas. Zone de protection = hauteur de « ÉNERGIE ». Ne jamais déformer, recolorer hors charte, ni pivoter."
+  }
+}
