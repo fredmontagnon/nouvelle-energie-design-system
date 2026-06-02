@@ -70,7 +70,7 @@ bleu↔indigo, bleu↔chamois, bleu↔émeraude, émeraude↔chamois).
 
 ## 5. Logo (voir `logo/`)
 Hexagone flat-top contenant : « NOUVELLE » (chamois) / **« ÉNERGIE »** (bleu, mot héros) /
-« POUR LA FRANCE » (bleu). Versions : `logo-couleur.svg` (fond clair), `logo-blanc.svg`
+« POUR LA FRANCE » (bleu). Versions : `logo-officiel.svg` (fond clair), `logo-blanc.svg`
 (fond bleu/photo), `logo-blanc-bleu.png` (fond bleu moyen). Toujours **centré en bas**.
 Ne jamais déformer ni recolorer hors charte.
 
@@ -89,8 +89,7 @@ centré en bas. Filigrane hexagone discret. → *la phrase d'ouverture qui claqu
 Fond **crème**. En-tête : hexagone plein bleu + label chamois « PROPOSITION N : » + titre
 Montserrat bleu (1 ligne). Accroche chamois en capitales. **Liste de 2–4 mesures** : puce
 hexagone + texte Montserrat (mot-clé en chamois dense), filets chamois entre les items. **Bandeau
-bleu** de conclusion en bas (barre chamois verticale + 1 phrase, mots-clés chamois). Logo
-couleur. → *une proposition = une carte.*
+bleu** de conclusion en bas (barre chamois verticale + 1 phrase, mots-clés chamois). Logo officiel. → *une proposition = une carte.*
 
 ### C. Chiffres / Data — `stats.html` → `exemples-visuels/stats-etat-de-sante.jpg`
 Fond **crème**. Titre 2 niveaux (fin + gras). **Grille d'hexagones-contours chamois** (3×2),

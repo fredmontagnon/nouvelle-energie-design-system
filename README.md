@@ -27,7 +27,7 @@ Détail pas-à-pas + exemples de prompts : **[00-LISEZ-MOI-claude-design.md](00-
 | `exemples-visuels/` | 6 visuels originaux publiés = le style à reproduire |
 
 ## Palette (relevée sur les visuels publiés)
-Bleu marine `#16216C` · Indigo `#1D2582` · Kaki `#ADAB85` · Fond `#F8F8F8` · Blanc `#FFFFFF`.
+Bleu Principal `#1D257A` · Bleu Sombre `#0F1752` · Chamois `#B0AD85` · Fond `#F9F9F9` · Secondaires `#52C985` / `#F62A72` / `#4A36A3`.
 Police : **Montserrat** (SIL OFL) — titres ExtraBold/SemiBold, texte Regular/Bold. Signature : **hexagone flat-top**.
 
 ## ⚠️ Notes

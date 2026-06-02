@@ -1,6 +1,6 @@
 {
   "$brand": "Nouvelle Énergie pour la France",
-  "$description": "Design tokens officiels — palette relevée sur les VISUELS PUBLIÉS. À ingérer par Claude Design comme système de design de référence.",
+  "$description": "Design tokens OFFICIELS (brand book Identité visuelle 2025). À ingérer par Claude Design comme système de design de référence.",
 
   "color": {
     "_doc": "Palette OFFICIELLE (brand book Identité visuelle 2025). Primaires = base ; secondaires = 5 à 15% MAX du visuel (boutons, lueurs, traits, mentions, accents).",
@@ -33,7 +33,7 @@
       "weights": [400, 700],
       "case": "normale",
       "lineHeight": "1.15–1.25",
-      "usage": "Phrases, mesures, légendes. Gras = structure ; mots-clés = en kaki."
+      "usage": "Phrases, mesures, légendes. Gras = structure ; mots-clés = en chamois."
     },
     "rule": "Police unique Montserrat (SIL OFL, incluse dans /fonts). Hiérarchie par le poids et la casse.",
     "officialWeights": "Brand book : 5 graisses retenues — Light 300, Regular 400, SemiBold 600, Bold 700, ExtraBold 800.",
@@ -92,7 +92,7 @@
     "principes": [
       "Une idée par visuel.",
       "Phrases courtes, affirmatives, au présent. Verbes d'action.",
-      "UN mot-clé porteur de sens surligné en kaki par phrase.",
+      "UN mot-clé porteur de sens surligné en chamois par phrase.",
       "Capitales pour titres et accroches ; casse normale pour le corps.",
       "Chiffres mis en scène (gros, dans un hexagone)."
     ]
@@ -100,9 +100,9 @@
 
   "logo": {
     "fichiers": {
-      "couleur": "logo/logo-couleur.svg — bleu + kaki, sur fond clair",
+      "officiel": "logo/logo-officiel.svg — bleu + chamois (palette officielle), sur fond clair",
       "blanc": "logo/logo-blanc.svg — tout blanc, sur fond bleu / photo",
-      "blanc-bleu": "logo/logo-blanc-bleu.png — ÉNERGIE blanc + reste kaki, sur fond bleu moyen"
+      "blanc-bleu": "logo/logo-blanc-bleu.png — ÉNERGIE blanc + reste chamois, sur fond bleu moyen"
     },
     "regles": "Toujours centré en bas. Zone de protection = hauteur de « ÉNERGIE ». Ne jamais déformer, recolorer hors charte, ni pivoter."
   }
