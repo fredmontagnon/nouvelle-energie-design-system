@@ -56,7 +56,7 @@
     "_doc": "Dispositifs graphiques récurrents du brand book.",
     "hexagone_declinaisons": "lignes (contours concentriques), surface pleine, points (trame demi-teinte), rayures (hachures). Coins LÉGÈREMENT ARRONDIS. Flat-top.",
     "patterns": "Fonds = motifs hexagonaux (lignes/points) en chamois ou indigo sur bleu, ou trame de points sur clair. Surtout digital/web.",
-    "photo_hexagone": "Les photos sont masquées dans un HEXAGONE à coins arrondis (portraits, foules). Petits hexagones pleins (dégradé rose/émeraude/indigo) éparpillés autour.",
+    "photo_hexagone": "Photos masquées dans un HEXAGONE (object-fit:cover; object-position:center 42%), TOUJOURS centrées sur le visage. Portraits David Lisnard pré-recadrés carré/visage dans le dépôt PRIVÉ 'nouvelle-energie-photos' (dl-01..10). Petits hexagones pleins (dégradé rose/émeraude/indigo) éparpillés autour. Gabarit composants/citation.html.",
     "lueur_demiteinte": "Trame de points en dégradé (rose/indigo) formant une lueur hexagonale derrière un mot fort.",
     "boutons": "Coins arrondis. Plein (couleur secondaire : émeraude 'adhérer', rose 'suivre') OU contour (bleu/rose). Libellés courts : adhérer, faire un don, suivre, s'inscrire.",
     "citation": "Grands guillemets bleus (« ») + citation en bleu gras + attribution en italique ; photo en hexagone à côté."

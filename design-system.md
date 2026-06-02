@@ -55,7 +55,7 @@ léger `border-radius` pour les coins).
 - **Déclinaisons** : lignes (contours concentriques) · surface pleine · **points** (trame demi-teinte) · **rayures** (hachures).
 - **Usages de base** : puce / icône / numéro (plein bleu) ; cadre de chiffre (contour chamois) ; filigrane ; logo.
 - **Patterns de fond** : motifs hexagonaux (lignes ou points) en chamois ou indigo sur bleu — surtout web/digital.
-- **Photo en hexagone** : images (portraits, foules) **masquées dans un hexagone arrondi** ; petits hexagones pleins (dégradé rose/émeraude/indigo) éparpillés autour.
+- **Photo en hexagone** : images **masquées dans un hexagone** (`object-fit:cover; object-position:center 42%`). **Toujours centrer sur le VISAGE** : nos portraits sont pré-recadrés carré, centrés sur le visage (détection auto) → aucun réglage par photo. Petits hexagones pleins (dégradé rose/émeraude/indigo) éparpillés autour. *Photothèque David Lisnard = dépôt **privé** `nouvelle-energie-photos` (10 portraits `dl-01..10`). Gabarit : `citation.html`.*
 - **Lueur demi-teinte** : trame de points en dégradé (rose/indigo) formant une lueur hexagonale derrière un mot fort.
 
 **Dégradés (8 officiels)** — subtils en fond ou en accent sur formes géométriques : bleu
