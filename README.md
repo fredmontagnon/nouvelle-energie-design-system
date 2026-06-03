@@ -25,7 +25,8 @@ Détail pas-à-pas + exemples de prompts : **[00-LISEZ-MOI-claude-design.md](00-
 | `fonts/` | Montserrat (SIL OFL, incluse) |
 | `composants/` | Gabarits HTML/CSS de référence (proposition, couverture, stats, citation) + **variantes carré 1:1 / story 9:16** |
 | `exemples-visuels/` | 6 visuels originaux publiés = le style à reproduire |
-| `apercus/` | Rendus des variantes de format (1:1, 9:16) |
+| `photos/` | 10 portraits David Lisnard (citations / photo-en-hexagone) |
+| `apercus/` | Rendus des variantes (1:1, 9:16) + exemple citation |
 | `render.py` | Rendu HTML → PNG (dépôt **auto-renderable** : `python3 render.py composants/x.html out.png`) |
 
 ## Palette (officielle — brand book 2025)
