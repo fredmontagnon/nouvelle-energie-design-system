@@ -106,8 +106,8 @@ au lieu du chamois.* → *développer un objectif en plusieurs mesures.*
 ### E. Citation / Verbatim — `citation.html`
 Fond clair. **Photo masquée dans un hexagone** (+ hexagone d'accent indigo derrière), grand
 guillemet bleu, citation en **Bleu Principal** (Montserrat ExtraBold), attribution en
-*italique*, logo. Idéal pour un **carrousel de citations** (1 photo par slide). *Les photos
-ne sont pas dans ce dépôt public (droits) — fournies par projet / par prompt.*
+*italique*, logo. Idéal pour un **carrousel de citations** (1 photo par slide). *Portraits
+dans `photos/` (`dl-01..10`, personnalité publique). Exemple rendu : `apercus/citation.png`.*
 
 > **✅ Couleurs officielles (brand book).** La palette des tokens vient de l'*Identité
 > visuelle 2025* : Bleu Principal `#1D257A`, Chamois `#B0AD85`, fond `#F9F9F9` — quasi
