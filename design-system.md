@@ -47,6 +47,8 @@ SemiBold (600), Bold (700), ExtraBold (800)**.
 - Labels (« PROPOSITION 3 : ») : Montserrat SemiBold, capitales, interlettrage large, en chamois.
 - Légendes de chiffres : Montserrat **italique**.
 - **Une seule famille** : hiérarchie par le **poids** et la **casse**. (`.ttf` dans `fonts/`.)
+- **Typographie française** : apostrophe courbe (’), guillemets français (« … »), espace fine
+  insécable avant `; ! ?`, insécable avant `:`. Outillé et auditable — voir section 10.
 
 ## 4. Symbole hexagone, patterns & dispositifs
 L'**hexagone flat-top** (arête horizontale haut/bas, coins **légèrement arrondis**) est LA
@@ -57,6 +59,7 @@ léger `border-radius` pour les coins).
 - **Patterns de fond** : motifs hexagonaux (lignes ou points) en chamois ou indigo sur bleu — surtout web/digital.
 - **Photo en hexagone** : images **masquées dans un hexagone** (`object-fit:cover; object-position:center 42%`). **Toujours centrer sur le VISAGE** : nos portraits sont pré-recadrés carré, centrés sur le visage (détection auto) → aucun réglage par photo. Petits hexagones pleins (dégradé rose/émeraude/indigo) éparpillés autour. *Photothèque David Lisnard dans **`photos/`** de ce dépôt (10 portraits `dl-01..10`, personnalité publique). Gabarit : `citation.html`.*
 - **Lueur demi-teinte** : trame de points en dégradé (rose/indigo) formant une lueur hexagonale derrière un mot fort.
+- **Implémentation** : les 3 trames officielles (grille, points, filigrane) + l'aplat hexagonal d'accent sont dans `composants/ne-patterns.css` (`.ne-pattern-grid` / `.ne-pattern-dots` / `.ne-watermark` / `.ne-hex-accent`) — jamais plus d'UN pattern par visuel. Ce sont des calques : toujours un `<div>` vide et positionné, jamais une classe posée sur un conteneur qui porte du texte (l'opacité du calque s'appliquerait aussi au texte).
 
 **Dégradés (8 officiels)** — subtils en fond ou en accent sur formes géométriques : bleu
 `#1D257A→#0F1752`, chamois `#B0AD85→#98955F`, + 6 mélanges (bleu↔rose, rose↔chamois,
@@ -77,7 +80,7 @@ Ne jamais déformer ni recolorer hors charte.
 ---
 
 ## 6. Composants & patterns de mise en page
-Trois gabarits de référence (code dans `composants/`, rendus dans `exemples-visuels/`).
+Gabarits de référence (code dans `composants/`, rendus dans `exemples-visuels/` et `apercus/`).
 Format par défaut **1080 × 1350** (4:5), marge de sécurité 84 px.
 
 ### A. Couverture / Manifeste — `couverture.html` → `exemples-visuels/couverture-genie.jpg`
@@ -109,6 +112,19 @@ guillemet bleu, citation en **Bleu Principal** (Montserrat ExtraBold), attributi
 *italique*, logo. Idéal pour un **carrousel de citations** (1 photo par slide). *Portraits
 dans `photos/` (`dl-01..10`, personnalité publique). Exemple rendu : `apercus/citation.png`.*
 
+### F. Carrousel & Réfutation — `ne-carrousel.css` → `refutation.html`
+Un carrousel n'est pas 5 visuels indépendants, c'est **1 récit** : ordre canonique figé —
+`cover → verbatim → faits → preuve → cta` — une seule slide **bleue** en ouverture, une seule
+en clôture, tout le milieu en **off-white**. `.ne-slide` remplace `.ne-canvas` dans ce contexte
+(mêmes 1080×1350, mais réserve automatiquement en bas la **zone plateforme** — points de
+pagination Instagram — pour qu'aucun contenu porteur n'y tombe). Apporte aussi : tailles de
+logo imposées (`--logo-sq-lg/md`, fini le `width:280px;height:auto` qui déforme un logo carré),
+liste à puces hexagonales à 3 items max (`.ne-hexlist`), et le **gabarit Réfutation**
+(`.ne-refut`) — le cas le plus fréquent en campagne : une accusation citée en gris barré, une
+flèche hexagonale, un fait en Bleu Principal ExtraBold, une source en italique. Une accusation,
+un fait, jamais deux. Exemple rendu : `apercus/refutation.png`. Détail des tokens et classes :
+commentaires en tête de `composants/ne-carrousel.css`.
+
 > **✅ Couleurs officielles (brand book).** La palette des tokens vient de l'*Identité
 > visuelle 2025* : Bleu Principal `#1D257A`, Chamois `#B0AD85`, fond `#F9F9F9` — quasi
 > identique à ce que montrent les visuels de référence. Accents secondaires (≤ 15 %) :
@@ -129,3 +145,17 @@ Titres en capitales, corps en casse normale. Pas de jargon dans les titres.
 Couleur hors palette · bloc entier en chamois · 3ᵉ police · hexagone pointe en haut · texte
 jusqu'aux bords · logo recoloré/déformé · blanc pur en fond · plus d'une idée par visuel ·
 ancienne identité (magenta / Cormorant).
+
+## 10. Outillage — lint typographique & lisibilité (`composants/ne-typo.js`)
+Les fautes corrigées à la main reviennent toujours : ce module les automatise plutôt que de
+compter sur la vigilance de chacun.
+- **`neTypo(texte)`** — corrige apostrophes, guillemets français, espaces insécables. À
+  appliquer sur tout texte injecté dynamiquement dans un gabarit.
+- **`neTypoLint(document)`** — audite un visuel rendu et liste les fautes restantes (apostrophe
+  droite, guillemets droits, ponctuation sans espace insécable, **emoji** — interdit par la
+  charte —, points de suspension tapés en trois points).
+- **`neLisibiliteLint(document)`** — vérifie les planchers de taille du brand book : **26px**
+  minimum pour toute légende, **chamois clair jamais porteur de texte** (contours/formes
+  uniquement), **chamois sombre ≥ 30px ET gras** uniquement.
+- Usage : `import { neTypo, neTypoLint } from './ne-typo.js'` puis
+  `console.table(neTypoLint(document))` avant d'exporter un rendu.

@@ -9,6 +9,7 @@ donne chaque format.
 | `couverture-1x1.png` | `composants/couverture-1x1.html` | **1080×1080 (1:1)** | Carré — feed Insta/LinkedIn/X |
 | `couverture-9x16.png` | `composants/couverture-9x16.html` | **1080×1920 (9:16)** | Story / Reel — contenu centré dans la zone sûre |
 | `proposition-1x1.png` | `composants/proposition-1x1.html` | **1080×1080 (1:1)** | Carré — feed / carrousel |
+| `refutation.png` | `composants/refutation.html` | **1080×1350 (4:5)** | Gabarit **Réfutation** — grammaire de carrousel (`ne-carrousel.css`) |
 
 Le format **4:5 (1080×1350)** par défaut est dans `composants/*.html` (rendus de référence :
 `exemples-visuels/`). Spécifications complètes par plateforme : `plateformes.md`.

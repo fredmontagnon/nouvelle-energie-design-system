@@ -1,0 +1,183 @@
+/* =====================================================================
+   NOUVELLE ÉNERGIE — ne-carrousel.css
+   Grammaire de SÉRIE : un carrousel n'est pas 5 visuels, c'est 1 récit.
+   Zone réservée plateforme, lockups logo, liste hexagonale,
+   pagination, gabarit Réfutation.
+   Importer APRÈS ne-charte.css (réutilise ses tokens : --ne-navy,
+   --ne-blue-dark, --ne-kaki, --ne-kaki-ink, --ne-cream, --ne-white,
+   --ne-gainsboro).
+   ===================================================================== */
+
+:root{
+  /* --- Zone réservée par l'UI de la plateforme (carrousel Instagram :
+         points de pagination + libellé). Aucun contenu porteur dedans. --- */
+  --reserve-bottom: 120px;
+  --reserve-bottom-story: 260px;   /* 9:16 : UI + CTA « voir plus » */
+
+  /* --- Tailles de logo imposées (fini le width:280px;height:auto) --- */
+  --logo-sq-lg: 236px;   /* signature carrée, slide de clôture */
+  --logo-sq-md: 200px;
+
+  /* --- 3 crans de titre par série, jamais de valeur libre ---------- */
+  --t-serie-1: 86px;   /* couverture + clôture */
+  --t-serie-2: 76px;   /* slides de contenu */
+  --t-serie-3: 62px;   /* verbatim */
+}
+
+/* ---------- SÉQUENCE DE CARROUSEL ---------------------------------
+   Ordre canonique, 5 slides. UNE seule slide bleue en ouverture,
+   UNE seule en clôture ; tout le milieu est off-white.
+     1. cover      — la phrase-manifeste            (bleu, cran 1)
+     2. verbatim   — la parole signée + portrait    (clair, cran 3)
+     3. faits      — 3 items max en hexagones       (clair, cran 2)
+     4. preuve     — l'objection démontée           (clair, cran 2)
+     5. cta        — la conclusion + site           (bleu, cran 1)
+   ------------------------------------------------------------------ */
+.ne-slide{
+  position:relative;
+  /* isolation:isolate borne le calcul d'empilement à cette slide : les
+     z-index négatifs des calques décoratifs (ne-patterns.css) restent
+     internes et ne peuvent pas être comparés à ceux d'une autre slide
+     ou d'un ancêtre de la page qui les intègre. */
+  isolation:isolate;
+  width:1080px;height:1350px;
+  overflow:hidden;
+  background:var(--ne-cream);
+  color:var(--ne-navy);
+  font-family:var(--font-text);
+  display:flex;flex-direction:column;
+  padding:96px 84px calc(var(--reserve-bottom) + 24px);
+}
+.ne-slide--blue{
+  background:linear-gradient(150deg,var(--ne-navy) 0%,var(--ne-blue-dark) 100%);
+  color:var(--ne-white);
+}
+/* Bandeau de conclusion : il doit toucher les bords → annule le padding */
+.ne-slide--banded{padding-bottom:0;}
+
+/* ---------- PIED DE SLIDE (logo + pagination) ---------------------- */
+/* Toujours AU-DESSUS de la zone réservée. */
+.ne-slide__foot{
+  margin-top:auto;
+  display:flex;align-items:center;justify-content:space-between;
+  padding-top:48px;
+}
+/* Logo officiel carré (hexagone + wordmark) — lockup unique, jamais recomposé.
+   Hauteur imposée : le SVG est carré 1417×1417, un height:auto le rend aussi
+   haut que large, ce qui faisait déborder les pieds de slide. */
+.ne-slide__foot .ne-logo-sq{width:var(--logo-sq-md);height:var(--logo-sq-md);object-fit:contain;display:block;}
+.ne-pagination{
+  font-family:var(--font-display);font-weight:600;
+  font-size:26px;letter-spacing:.16em;
+  color:var(--ne-kaki-ink);
+}
+.ne-slide--blue .ne-pagination{color:rgba(255,255,255,.55);}
+
+/* ---------- LISTE À PUCES HEXAGONALES ------------------------------
+   3 items max (4 = mur). Mot-clé chamois, JAMAIS de gras.
+   flex:none + nowrap : un item ne se casse jamais en deux lignes.
+   ------------------------------------------------------------------ */
+.ne-hexlist{display:flex;flex-direction:column;gap:36px;}
+.ne-hexlist > li{
+  list-style:none;
+  display:flex;align-items:center;gap:28px;
+  flex:none;
+}
+.ne-hexlist__mark{
+  flex:none;width:64px;height:55px;
+  clip-path:polygon(25% 0%,75% 0%,100% 50%,75% 100%,25% 100%,0% 50%);
+  background:var(--ne-navy);
+  display:flex;align-items:center;justify-content:center;
+  color:var(--ne-white);
+  font-family:var(--font-display);font-weight:800;font-size:30px;
+}
+.ne-hexlist__text{
+  font-size:44px;line-height:1.25;
+  white-space:nowrap;              /* item court = une ligne, point */
+}
+.ne-hexlist__text .k{color:var(--ne-kaki-ink);}
+.ne-slide--blue .ne-hexlist__text .k{color:var(--ne-kaki);}
+
+/* ---------- GABARIT RÉFUTATION (nouveau) ---------------------------
+   Le cas le plus fréquent en campagne : on répond à une attaque.
+   L'accusation est citée en gris barré, le fait répond en bleu.
+   Une accusation, un fait. Jamais deux.
+   ------------------------------------------------------------------ */
+.ne-refut{display:flex;flex-direction:column;gap:0;}
+.ne-refut__claim{
+  position:relative;
+  padding:36px 0 36px 40px;
+  border-left:7px solid var(--ne-gainsboro);
+  color:#6E7280;                       /* gris neutre, hors hiérarchie */
+  font-size:40px;line-height:1.4;
+  font-style:italic;
+  /* la rature : le propos est faux. text-decoration raye CHAQUE ligne,
+     contrairement à un pseudo-élément qui suppose une accusation d'une seule ligne. */
+  text-decoration:line-through;
+  text-decoration-color:currentColor;   /* gainsboro sur off-white = 1,15:1, la rature
+                                           ne se voyait pas : elle prend la couleur du texte */
+  text-decoration-thickness:4px;
+}
+.ne-refut__arrow{
+  width:44px;height:38px;margin:40px 0 40px 0;
+  clip-path:polygon(25% 0%,75% 0%,100% 50%,75% 100%,25% 100%,0% 50%);
+  background:var(--ne-kaki);
+}
+.ne-refut__fact{
+  padding-left:47px;
+  font-family:var(--font-display);font-weight:800;
+  font-size:var(--t-serie-2);line-height:1.06;letter-spacing:-.01em;
+  text-transform:uppercase;
+  color:var(--ne-navy);
+}
+.ne-refut__fact .k{color:var(--ne-kaki-ink);}
+.ne-refut__source{
+  margin-top:36px;padding-left:47px;
+  font-style:italic;font-size:28px;line-height:1.35;
+  color:color-mix(in srgb, var(--ne-navy) 70%, transparent);
+}
+
+/* ---------- GUILLEMET DÉCORATIF (verbatim) -------------------------
+   Le « n'est pas un caractère de texte : c'est une FORME. Il passe
+   derrière la citation, en chamois clair — usage autorisé par la charte
+   (chamois clair = filets et formes, jamais du texte porteur).
+   ------------------------------------------------------------------ */
+.ne-quote{position:relative;}
+.ne-quote__mark{
+  /* le glyphe « n'occupe que ~0,4 em : il faut le composer très grand
+     pour qu'il pèse comme une forme et non comme une ponctuation. */
+  /* Calage mesuré sur l'encre réelle du glyphe (Montserrat 800) : à 520px,
+     l'encre occupe 202→407px sous le haut de la boîte et 16→303px depuis sa
+     gauche. On la remonte donc au-dessus de la citation — elle se pose dans le
+     vide à gauche du portrait et ne croise que la 1re ligne, en bleu. Aucun
+     mot-clé chamois sombre ne passe dessus (1,7:1 sinon). */
+  position:absolute;left:-16px;top:-339px;
+  font-family:var(--font-display);font-weight:800;
+  font-size:520px;line-height:1;
+  color:var(--ne-kaki);
+  opacity:.9;
+  z-index:0;pointer-events:none;user-select:none;
+}
+.ne-quote__text{position:relative;z-index:1;}
+.ne-slide--blue .ne-quote__mark{color:var(--ne-kaki);opacity:.30;}
+
+/* ---------- ATTRIBUTION DE CITATION --------------------------------
+   Remplace une couleur hors palette (ex. #4a4a3e) parfois recomposée à
+   la main sur des gabarits de citation ad hoc.
+   ------------------------------------------------------------------ */
+.ne-attrib{
+  font-style:italic;font-size:27px;margin-top:6px;
+  color:color-mix(in srgb, var(--ne-navy) 70%, transparent);
+}
+
+/* ---------- GARDE-FOU ZONE RÉSERVÉE (aide de production) ------------
+   Ajouter la classe sur .ne-slide pour visualiser la bande interdite.
+   ------------------------------------------------------------------ */
+.ne-debug-safe::after{
+  content:"zone réservée plateforme";
+  position:absolute;left:0;right:0;bottom:0;height:var(--reserve-bottom);
+  background:repeating-linear-gradient(45deg,rgba(246,42,114,.18) 0 12px,transparent 12px 24px);
+  color:#F62A72;font-size:20px;letter-spacing:.16em;text-transform:uppercase;
+  display:flex;align-items:center;justify-content:center;
+  pointer-events:none;
+}

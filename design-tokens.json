@@ -37,7 +37,15 @@
     },
     "rule": "Police unique Montserrat (SIL OFL, incluse dans /fonts). Hiérarchie par le poids et la casse.",
     "officialWeights": "Brand book : 5 graisses retenues — Light 300, Regular 400, SemiBold 600, Bold 700, ExtraBold 800.",
-    "license": "SIL Open Font License — libre, fichiers .ttf + OFL.txt dans /fonts"
+    "license": "SIL Open Font License — libre, fichiers .ttf + OFL.txt dans /fonts",
+    "frenchRules": "Apostrophe courbe (’), guillemets français (« … »), espace fine insécable avant ; ! ?, insécable avant :. Outillé : composants/ne-typo.js (neTypo corrige, neTypoLint audite)."
+  },
+
+  "readability": {
+    "_doc": "Planchers de lisibilité du brand book, audités par composants/ne-typo.js (neLisibiliteLint).",
+    "captionFloor": "26px minimum pour toute légende / texte porteur.",
+    "chamoisClair": "Jamais porteur de texte : filets et formes uniquement.",
+    "chamoisSombre": "≥30px ET gras (600+) uniquement, sur fond clair."
   },
 
   "gradients": {
@@ -60,6 +68,14 @@
     "lueur_demiteinte": "Trame de points en dégradé (rose/indigo) formant une lueur hexagonale derrière un mot fort.",
     "boutons": "Coins arrondis. Plein (couleur secondaire : émeraude 'adhérer', rose 'suivre') OU contour (bleu/rose). Libellés courts : adhérer, faire un don, suivre, s'inscrire.",
     "citation": "Grands guillemets bleus (« ») + citation en bleu gras + attribution en italique ; photo en hexagone à côté."
+  },
+
+  "carousel": {
+    "_doc": "Grammaire de série (composants/ne-carrousel.css). Un carrousel = 1 récit, pas 5 visuels isolés. Ordre canonique : cover → verbatim → faits → preuve → cta. Une seule slide bleue en ouverture, une seule en clôture, milieu en off-white.",
+    "reserveBottom": { "default": "120px", "story9x16": "260px", "usage": "Zone couverte par l'UI de la plateforme (pagination du carrousel, CTA story). Aucun contenu porteur dedans — classe d'aide .ne-debug-safe pour la visualiser." },
+    "logoSquare": { "lg": "236px", "md": "200px", "usage": "Tailles imposées du logo carré (SVG 1417×1417) en pied de slide via .ne-logo-sq — jamais width seul + height:auto recomposé à la main." },
+    "titleScale": { "t1": "86px", "t2": "76px", "t3": "62px", "usage": "3 crans de titre par série, jamais de valeur libre : t1 = couverture/clôture, t2 = slides de contenu, t3 = verbatim." },
+    "refutation": "Gabarit .ne-refut (composants/refutation.html) : accusation citée en gris barré, flèche hexagonale chamois, fait en Bleu Principal ExtraBold, source en italique. Une accusation, un fait, jamais deux."
   },
 
   "shape": {

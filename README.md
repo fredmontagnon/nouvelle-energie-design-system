@@ -23,10 +23,10 @@ Détail pas-à-pas + exemples de prompts : **[00-LISEZ-MOI-claude-design.md](00-
 | `plateformes.md` | **Specs X / Instagram / LinkedIn / Facebook (2026) + zones de sécurité** |
 | `logo/` | Logo officiel (SVG/PNG/.ai) + déclinaisons |
 | `fonts/` | Montserrat (SIL OFL, incluse) |
-| `composants/` | Gabarits HTML/CSS de référence (proposition, couverture, stats, citation) + **variantes carré 1:1 / story 9:16** |
+| `composants/` | Gabarits HTML/CSS de référence (proposition, couverture, stats, citation, **réfutation**) + **variantes carré 1:1 / story 9:16** + **grammaire de carrousel** (`ne-carrousel.css`), **trames hexagonales** (`ne-patterns.css`), **lint typographique FR** (`ne-typo.js`) |
 | `exemples-visuels/` | 6 visuels originaux publiés = le style à reproduire |
 | `photos/` | 10 portraits David Lisnard (citations / photo-en-hexagone) |
-| `apercus/` | Rendus des variantes (1:1, 9:16) + exemple citation |
+| `apercus/` | Rendus des variantes (1:1, 9:16) + exemples citation et réfutation |
 | `render.py` | Rendu HTML → PNG (dépôt **auto-renderable** : `python3 render.py composants/x.html out.png`) |
 
 ## Palette (officielle — brand book 2025)

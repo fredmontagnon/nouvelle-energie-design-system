@@ -1,0 +1,95 @@
+/* =====================================================================
+   NOUVELLE ÉNERGIE — ne-patterns.css
+   Trames hexagonales officielles. Fini les gros aplats improvisés :
+   3 patterns figés, opacités imposées, jamais plus d'UN par visuel.
+   Importer APRÈS ne-charte.css.
+   ===================================================================== */
+
+/* Tuile hexagonale flat-top : w=80 → pas horizontal 60, pas vertical 69.28 */
+
+/* --- 1. GRILLE DE CONTOURS ---------------------------------------- */
+/* Fond bleu uniquement. Signature discrète, jamais sous du texte dense.
+   position:absolute + inset:0 : ce calque n'a pas de contenu à lui, donc
+   son opacity ne doit jamais s'appliquer à autre chose qu'à lui-même —
+   sinon tout ce qui est posé DANS le même élément (au lieu d'à côté, en
+   frère) hérite de la même opacité et devient illisible. Même construction
+   que .ne-watermark : toujours un <div> vide, jamais une classe posée sur
+   un conteneur qui porte du texte. */
+.ne-pattern-grid{
+  position:absolute;inset:0;z-index:-1;pointer-events:none;
+  background-image:url("data:image/svg+xml;utf8,\
+<svg xmlns='http://www.w3.org/2000/svg' width='120' height='69.28' viewBox='0 0 120 69.28'>\
+<g fill='none' stroke='%23B0AD85' stroke-width='1.4'>\
+<path d='M0 34.64 L20 0 L60 0 L80 34.64 L60 69.28 L20 69.28 Z'/>\
+<path d='M60 0 L80 -34.64 L120 -34.64 L140 0 L120 34.64 L80 34.64 Z'/>\
+<path d='M60 69.28 L80 34.64 L120 34.64 L140 69.28 L120 103.92 L80 103.92 Z'/>\
+<path d='M-60 0 L-40 -34.64 L0 -34.64 L20 0 L0 34.64 L-40 34.64 Z'/>\
+<path d='M-60 69.28 L-40 34.64 L0 34.64 L20 69.28 L0 103.92 L-40 103.92 Z'/>\
+</g></svg>");
+  background-size:120px 69.28px;
+  opacity:.16;
+}
+
+/* --- 2. TRAME DE POINTS ------------------------------------------- */
+/* Lueur demi-teinte derrière un mot fort. Dégradé par masque, pas par couleur.
+   Même règle que la grille ci-dessus : calque vide, absolument positionné. */
+.ne-pattern-dots{
+  position:absolute;inset:0;z-index:-1;pointer-events:none;
+  background-image:url("data:image/svg+xml;utf8,\
+<svg xmlns='http://www.w3.org/2000/svg' width='30' height='34.64' viewBox='0 0 30 34.64'>\
+<g fill='%23B0AD85'><circle cx='0' cy='0' r='2.4'/><circle cx='30' cy='0' r='2.4'/>\
+<circle cx='15' cy='17.32' r='2.4'/><circle cx='0' cy='34.64' r='2.4'/>\
+<circle cx='30' cy='34.64' r='2.4'/></g></svg>");
+  background-size:30px 34.64px;
+  opacity:.34;
+  -webkit-mask-image:radial-gradient(closest-side,#000 0%,transparent 100%);
+  mask-image:radial-gradient(closest-side,#000 0%,transparent 100%);
+}
+.ne-pattern-dots--indigo{filter:hue-rotate(0deg);}
+
+/* --- 3. FILIGRANE (un seul grand hexagone en contour) -------------- */
+/* Le seul décor autorisé sur fond CLAIR. Toujours coupé par un bord. */
+.ne-watermark{
+  position:absolute;z-index:-1;pointer-events:none;
+  width:640px;height:554px;
+  border:0;
+  background:none;
+  -webkit-mask:none;mask:none;
+  background-image:url("data:image/svg+xml;utf8,\
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 86.6' width='100' height='86.6'>\
+<path d='M25 0 L75 0 L100 43.3 L75 86.6 L25 86.6 L0 43.3 Z' fill='none' stroke='%23B0AD85' stroke-width='1.1'/>\
+<path d='M35 17.3 L65 17.3 L80 43.3 L65 69.3 L35 69.3 L20 43.3 Z' fill='none' stroke='%23B0AD85' stroke-width='1.1'/>\
+</svg>");
+  background-size:100% 100%;
+  background-repeat:no-repeat;
+  opacity:.34;
+  pointer-events:none;
+}
+.ne-watermark--on-blue{opacity:.20;}
+
+/* --- Aplat hexagonal plein (accent derrière une photo) ------------- */
+/* Autorisé UNE fois par visuel, uniquement derrière un portrait. */
+.ne-hex-accent{
+  clip-path:polygon(25% 0%,75% 0%,100% 50%,75% 100%,25% 100%,0% 50%);
+  background:var(--ne-indigo);
+  opacity:.9;
+}
+
+/* RÈGLE DE PLACEMENT — le filigrane ne se pose pas « à l'œil ».
+   Une slide est une colonne de texte alignée à gauche sur toute sa hauteur :
+   la seule zone libre est le quart supérieur droit. Donc .ne-watermark n'est
+   autorisé QUE là, ou derrière un média (portrait, hexagone photo).
+   Sur une slide sans zone vide (liste, bandeau, CTA), pas de filigrane :
+   le fond bleu ou l'off-white suffisent.
+
+   RÈGLE DE STRUCTURE — .ne-pattern-grid / .ne-pattern-dots / .ne-watermark
+   sont TOUJOURS un <div> vide, frère du contenu, jamais une classe ajoutée
+   sur le conteneur qui porte le texte :
+     ✅ <div class="ne-slide"><div class="ne-pattern-grid"></div><h1>…</h1></div>
+     ❌ <div class="ne-slide ne-pattern-grid"><h1>…</h1></div>
+   Le calque a sa propre opacity : la poser sur un conteneur de texte rend
+   ce texte tout aussi transparent que le motif.
+
+   À NE PAS FAIRE : hexagone plein de plus de 560px sur un fond,
+   deux patterns sur le même visuel, un pattern derrière un bloc de texte,
+   compenser un recouvrement en baissant l'opacité. */
